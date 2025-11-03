@@ -106,7 +106,7 @@ void ImuGrabber::GrabImu(const sensor_msgs::ImuConstPtr& msg)
 
 int main(int argc, char **argv)
 {
-    ros::init(argc, argv, "rvio2_mono");
+    ros::init(argc, argv, "R-VIO2");
 
     ros::start();
 

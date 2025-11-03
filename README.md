@@ -1,4 +1,4 @@
-# R-VIO2
+# rvio2_mono (fork of R-VIO2)
 
 R-VIO2 is a novel square root information-based robocentric visual-inertial navigation algorithm using a monocular camera and a single IMU for consistent 3D motion tracking. It is developed based on our [robocentric VIO model](https://journals.sagepub.com/doi/pdf/10.1177/0278364919853361), while different with our previous work [R-VIO](https://github.com/rpng/R-VIO), we have derived and used i) our square-root robocentric formulation and ii) QR-based update combined with back substitution to improve the numerical stability and computational efficiency of the estimator. Moreover, the spatiotemporal calibration is performed online to robustify the performance of estimator in the presence of unknown parameter errors. Especially, this implementation can run in two modes: VIO or SLAM, where the former does not estimate any map points during the navigation (our *RA-L2022* paper), while the latter estimates a small set of map points in favor of localization (the frontend developed for our *ICRA2021* paper).
 
@@ -66,7 +66,14 @@ Download and install instructions can be found at: http://opencv.org. **Tested w
 
 
 ## 2. Build and Run
-First `git clone` the repository and `catkin_make` it. Especially, `rvio2_mono` is used to run with rosbag in real time, while `rvio2_mono_eval` is used for evaluation purpose which preloads the rosbag and reads it as a txt file. A config file and a launch file are required for running R-VIO2 (for example, `rvio2_euroc.yaml` and `euroc.launch` are for [EuRoC](https://projects.asl.ethz.ch/datasets/doku.php?id=kmavvisualinertialdatasets) dataset). The default mode is VIO, while you can switch to SLAM mode by setting the maximum number of SLAM features to nonzero from the config file (see `rvio2_euroc.yaml`). To visualize the outputs, please use `rviz`.
+First `git clone` the repository and `catkin_make` it. The executable
+`rvio2_mono` is used to run with rosbag in real time, while `rvio2_mono_eval`
+preloads the bag for offline evaluation. A config file and a launch file are
+required for running rvio2_mono (for example, `rvio2_euroc.yaml` and
+`euroc.launch` for the [EuRoC](https://projects.asl.ethz.ch/datasets/doku.php?id=kmavvisualinertialdatasets)
+dataset). The default mode is VIO; switch to SLAM by setting the maximum number
+of SLAM features to a nonzero value in the config (see `rvio2_euroc.yaml`).
+Use `rviz` to visualize the outputs.
 #### Start ROS:
   ```
   Terminal 1: roscore
@@ -89,4 +96,4 @@ Note that this implementation currently requires the sensor platform to start fr
 
 ## 3. License
 This code is released under [GNU General Public License v3 (GPL-3.0)](https://www.gnu.org/licenses/gpl-3.0.en.html).
-# RVIO2-odometry_pub
+

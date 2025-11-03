@@ -35,7 +35,7 @@
 
 int main(int argc, char **argv)
 {
-    ros::init(argc, argv, "rvio2_mono_eval");
+    ros::init(argc, argv, "R-VIO2_eval");
 
     ros::start();
 
