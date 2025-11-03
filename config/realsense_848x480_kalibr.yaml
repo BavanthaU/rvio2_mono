@@ -14,7 +14,7 @@ IMU.sigma_a: 2.0000e-3
 IMU.sigma_wa: 3.0000e-3
 
 # Gravity
-IMU.nG: 9.8082
+IMU.nG: 9.81
 
 # Threshold of small angle [rad] (<.1deg)
 IMU.nSmallAngle: 0.001745329
@@ -37,29 +37,29 @@ Camera.RGB: 1
 Camera.Fisheye: 0
 
 # Camera intrinsics
-Camera.fx: 612.5659179
-Camera.fy: 611.7391967
-Camera.cx: 417.6900329
-Camera.cy: 243.9552154
+Camera.fx: 523.8679783632149
+Camera.fy: 527.3991129729038
+Camera.cx: 417.35786731997706
+Camera.cy: 250.39502964565867
 
-Camera.k1: 0
-Camera.k2: 0
-Camera.p1: 0
-Camera.p2: 0
+Camera.k1: 0.0691214959057488
+Camera.k2: -0.10320943776921207
+Camera.p1: 0.0004049962256229776
+Camera.p2: -0.0006370632734781639
 
 # Camera image noise (1/f)
-Camera.sigma_px: 0.001632477
-Camera.sigma_py: 0.001634684
+Camera.sigma_px: 0.00190887788
+Camera.sigma_py: 0.00189609723
 
 # Camera extrinsics [B:IMU,C0:cam0]
 Camera.T_BC0_GT: !!opencv-matrix # Ground truth
     rows: 4
     cols: 4
     dt: d
-    data: [ 0.999931, 0.01139, -0.00300426, -0.0148924347013235,
-           -0.0114012, 0.999928, -0.00371329, 0.00011271434777882,
-            0.00296175, 0.00374728, 0.999989, -0.000207928664167412,
-            0.0, 0.0, 0.0, 1.0]
+    data:  [0.99960486,  0.02753616,  0.00564652, -0.00516481,
+         -0.02761776,  0.99950718,  0.01492168,  0.01767537,
+         -0.00523285, -0.01507173,  0.99987272,  0.07581635,
+          0.00000000,  0.00000000,  0.00000000,  1.00000000]
 
 Camera.T_BC0: !!opencv-matrix # Approximate
     rows: 4

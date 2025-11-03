@@ -29,6 +29,33 @@ If you find this work relevant to or use it for your research, please consider c
 }
 ```
 
+## Mono-Hydra fork
+
+This repository is used within the Mono-Hydra pipeline with additional automation and without loop-closure. Please cite the original R-VIO2 papers (see above) and the Mono-Hydra paper when using this fork:
+
+```bibtex
+@article{Udugama_2023,
+   title={MONO-HYDRA: REAL-TIME 3D SCENE GRAPH CONSTRUCTION FROM MONOCULAR CAMERA INPUT WITH IMU},
+   volume={X-1/W1-2023},
+   ISSN={2194-9050},
+   url={http://dx.doi.org/10.5194/isprs-annals-X-1-W1-2023-439-2023},
+   DOI={10.5194/isprs-annals-x-1-w1-2023-439-2023},
+   journal={ISPRS Annals of the Photogrammetry, Remote Sensing and Spatial Information Sciences},
+   publisher={Copernicus GmbH},
+   author={Udugama, U. V. B. L. and Vosselman, G. and Nex, F.},
+   year={2023},
+   month=dec,
+   pages={439--445}
+}
+```
+
+For RealSense deployments inside Mono-Hydra we typically launch:
+
+```
+roslaunch rvio2 realsense.launch
+```
+
+
 ## 1. Prerequisites
 ### ROS
 Download and install instructions can be found at: http://wiki.ros.org/kinetic/Installation/Ubuntu.

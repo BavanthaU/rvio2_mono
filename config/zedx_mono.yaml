@@ -27,8 +27,8 @@ IMU.nSmallAngle: 0.001745329
 Camera.fps: 30
 
 # Camera image resolution
-Camera.width: 848
-Camera.height: 480
+Camera.width: 480
+Camera.height: 270
 
 # Is RGB or not
 Camera.RGB: 1
@@ -37,10 +37,10 @@ Camera.RGB: 1
 Camera.Fisheye: 0
 
 # Camera intrinsics
-Camera.fx: 612.5659179
-Camera.fy: 611.7391967
-Camera.cx: 417.6900329
-Camera.cy: 243.9552154
+Camera.fx: 168.9812
+Camera.fy: 181.5827
+Camera.cx: 250.1719
+Camera.cy: 144.2443
 
 Camera.k1: 0
 Camera.k2: 0
@@ -48,25 +48,25 @@ Camera.p1: 0
 Camera.p2: 0
 
 # Camera image noise (1/f)
-Camera.sigma_px: 0.001632477
-Camera.sigma_py: 0.001634684
+Camera.sigma_px: 0.00591781807
+Camera.sigma_py: 0.00550713256
 
 # Camera extrinsics [B:IMU,C0:cam0]
 Camera.T_BC0_GT: !!opencv-matrix # Ground truth
     rows: 4
     cols: 4
     dt: d
-    data: [ 0.999931, 0.01139, -0.00300426, -0.0148924347013235,
-           -0.0114012, 0.999928, -0.00371329, 0.00011271434777882,
-            0.00296175, 0.00374728, 0.999989, -0.000207928664167412,
-            0.0, 0.0, 0.0, 1.0]
+    data: [0.999960, -0.002297,  0.008629, -0.0061,
+         0.002280,  0.999995,  0.002018,  0.00708,
+        -0.008633, -0.001998,  0.999961, -0.00196,
+         0.0,       0.0,       0.0,       1.0]
 
 Camera.T_BC0: !!opencv-matrix # Approximate
     rows: 4
     cols: 4
     dt: d
-    data: [0.0, -1.0, 0.0, 0.0,
-           1.0,  0.0, 0.0, 0.0,
+    data: [1.0, 0.0, 0.0, 0.0,
+           0.0,  1.0, 0.0, 0.0,
            0.0,  0.0, 1.0, 0.0,
            0.0,  0.0, 0.0, 1.0]
 
@@ -114,7 +114,7 @@ Tracker.nQualLvl: 1e-2
 Tracker.nMinDist: 15
 
 # Max. number of SLAM features (VIO:0, SLAM:50)
-Tracker.nMaxSlamPoints: 50
+Tracker.nMaxSlamPoints: 0
 
 # Parallax of good feature [deg] (only for SLAM)
 Tracker.nGoodParallax: 5
