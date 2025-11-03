@@ -54,16 +54,16 @@ add_library(${PROJECT_NAME} SHARED
   src/rvio2/FeatureDetector.cc
 )
 
-add_executable(R-VIO2 src/R-VIO2.cc)
-target_link_libraries(R-VIO2
+add_executable(rvio2_mono_node src/rvio2_mono.cc)
+target_link_libraries(rvio2_mono_node
   ${PROJECT_NAME}
   ${OpenCV_LIBS}
   ${EIGEN3_LIBS}
   ${catkin_LIBRARIES}
 )
 
-add_executable(R-VIO2_eval src/R-VIO2_eval.cc)
-target_link_libraries(R-VIO2_eval
+add_executable(rvio2_mono_eval_node src/rvio2_mono_eval.cc)
+target_link_libraries(rvio2_mono_eval_node
   ${PROJECT_NAME}
   ${OpenCV_LIBS}
   ${EIGEN3_LIBS}
